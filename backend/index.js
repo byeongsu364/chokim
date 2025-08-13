@@ -17,14 +17,8 @@ mongoose.connect(process.env.MONGO_URI)
         .catch((err)=>console.log("연결 실패",err))
 
 
-<<<<<<< HEAD
 const BookRoutes = require("./routes/BookRoutes")
 app.use("/api/books",BookRoutes)
-=======
-const bookRoutes = require("./routes/BookRoutes")
-app.use("/api/books",bookRoutes)
-
->>>>>>> 3e484edd681889f8f025d28e5f677376d388409f
 app.get('/',(req,res)=>{
     res.send("Hello Express!")
 })
