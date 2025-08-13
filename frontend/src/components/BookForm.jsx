@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
-const bookForm = () => {
+const BookForm = () => {
 
   const API = import.meta.env.VITE_API_URL
 
-  const [books, setbooks] = useState([])
+  const [books, setBooks] = useState([])
 
-  const fetchbooks = async () => {
+  const fetchBooks = async () => {
     try {
 
       const res = await axios.get(`${API}/api/books`)
       const data = Array.isArray(res.data) ? res.data : res.data.books ?? []
       // console.log(data)
-      setPosts(data)
+      setBooks(data)
     } catch (error) {
       console.log(error, "불러오기 실패")
     }
 
   }
-  fetchPosts()
+
+  fetchBooks()
   return (
     <div>
       {books.map((book) => (
@@ -32,4 +32,5 @@ const bookForm = () => {
     </div>
   )
 }
-export default bookForm
+
+export default BookForm

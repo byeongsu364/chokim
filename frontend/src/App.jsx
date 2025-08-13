@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import PostForm from './components/PostForm'
+import BookForm from './components/BookForm'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <PostForm/>
+      <BookForm/>
     </>
   )
 }
