@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+<<<<<<< HEAD:frontend/src/components/BookForm.jsx
 const BookForm = () => {
+=======
+import './Book.css'
+
+const bookForm = () => {
+>>>>>>> 3e484edd681889f8f025d28e5f677376d388409f:frontend/src/components/book.jsx
 
   const API = import.meta.env.VITE_API_URL
 

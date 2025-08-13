@@ -1,11 +1,11 @@
 const express = require("express")
 const router = express.Router()
-const Post = require("../models/post")
+const Book = require("../models/Book")
 
 
 router.post("/", async (req, res) => {
     try {
-        const newPost = new Post(req.body)
+        const newPost = new Book(req.body)
         const saved = await newPost.save()
         res.status(201).json(saved)
     } catch (error) {
@@ -15,9 +15,9 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
     try {
 
-        const posts = await Post.find().sort({ createdAt: -1 })
+        const books = await Book.find().sort({ createdAt: -1 })
 
-        res.status(201).json(posts)
+        res.status(201).json(books)
     } catch (error) {
         res.status(400).json({ message: '불러오기 실패', error })
     }
@@ -25,9 +25,9 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
     try {
 
-        const post = await Post.findById(req.params.id)
-        if (!post) return res.status(404).json({ message: '수정할 글 없음' })
-        res.status(201).json(post)
+        const book = await Book.findById(req.params.id)
+        if (!book) return res.status(404).json({ message: '수정할 도서 없음' })
+        res.status(201).json(book)
     } catch (error) {
         res.status(400).json({ message: '1개 불러오기 실패', error })
     }
@@ -36,14 +36,14 @@ router.get("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
     try {
 
-        const updated = await Post.findByIdAndUpdate(
+        const updated = await Book.findByIdAndUpdate(
             req.params.id,
             req.body,
             {
                 new: true
             }
         )
-        if (!updated) return res.status(404).json({ message: '수정할 글 없음' })
+        if (!updated) return res.status(404).json({ message: '수정할 도서 없음' })
         res.status(201).json(updated)
     } catch (error) {
         res.status(400).json({ message: '1개 불러오기 실패', error })
@@ -52,9 +52,9 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
     try {
 
-        const deleted = await Post.findByIdAndDelete(req.params.id)
-        if (!deleted) return res.status(404).json({ message: '삭제할 글 없음' })
-        res.status(201).json({message:"삭제 게시글",post: deleted})
+        const deleted = await Book.findByIdAndDelete(req.params.id)
+        if (!deleted) return res.status(404).json({ message: '삭제할 도서 없음' })
+        res.status(201).json({message:"삭제 도서", book: deleted})
     } catch (error) {
         res.status(400).json({ message: '1개 불러오기 실패', error })
     }
