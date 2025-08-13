@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import PostForm from './components/PostForm'
+import Book from './components/Book'
 
 function App() {
 
   return (
     <>
-      <PostForm/>
+      <Book/>
     </>
   )
 }
