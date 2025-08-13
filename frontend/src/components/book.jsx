@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const PostForm = () => {
+const bookForm = () => {
 
   const API = import.meta.env.VITE_API_URL
 
-  const [posts, setPosts] = useState([])
+  const [books, setbooks] = useState([])
 
-  const fetchPosts = async () => {
+  const fetchbooks = async () => {
     try {
 
-      const res = await axios.get(`${API}/api/posts`)
-      const data = Array.isArray(res.data) ? res.data : res.data.posts ?? []
+      const res = await axios.get(`${API}/api/books`)
+      const data = Array.isArray(res.data) ? res.data : res.data.books ?? []
       // console.log(data)
       setPosts(data)
     } catch (error) {
@@ -22,14 +22,14 @@ const PostForm = () => {
   fetchPosts()
   return (
     <div>
-      {posts.map((post) => (
-        <div key={post._id}>
-          {post.title} / 
-          {post.content} /{post.auther}
+      {books.map((book) => (
+        <div key={book._id}>
+          {book.title} / 
+          {book.content} /{book.auther}
 
         </div>
       ))}
     </div>
   )
 }
-export default PostForm
+export default bookForm
