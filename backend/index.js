@@ -17,14 +17,9 @@ mongoose.connect(process.env.MONGO_URI)
         .catch((err)=>console.log("연결 실패",err))
 
 
-<<<<<<< HEAD
-app.listen(PORT, () => {
-    console.log('Hello Exress!')
-})``
-=======
-
 const bookRoutes = require("./routes/BookRoutes")
 app.use("/api/books",bookRoutes)
+
 app.get('/',(req,res)=>{
     res.send("Hello Express!")
 })
@@ -32,4 +27,3 @@ app.get('/',(req,res)=>{
 app.listen(PORT,()=>{
     console.log('Server is Running!')
 })
->>>>>>> e640faebda66ef844d297330166d375c05807a10
