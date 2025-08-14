@@ -1,0 +1,116 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+.book-wrap {
+    max-width: 680px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
+
+.post-wrap {
+    max-width: 680px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
+
+
+.book-wrap h2 {
+    margin: 0 0 12px;
+}
+
+.book-wrap h2 span {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-weight: lighter;
+    background: linear-gradient(to right, #0400ff, #00d9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.post-wrap h2 {
+    margin: 0 0 12px;
+}
+
+.post-wrap h2 span {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-weight: lighter;
+    background: linear-gradient(to right, #0400ff, #00d9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.controls input,
+.controls textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.btn {
+    padding: 12px;
+    border: 1px solid #f8fafc;
+    cursor: pointer;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.buttons {
+    margin-bottom: 40px;
+}
+
+.btn.enrol {
+    background-color: skyblue;
+}
+
+.btn.refresh {
+    background-color: rgb(241, 168, 9);
+}
+
+.btn+.btn {
+    margin-left: 10px;
+}
+
+.update.btn {
+    background-color: yellowgreen;
+}
+
+.delete.btn {
+    background-color: salmon;
+}
+
+.btn:hover {
+    background-color: aliceblue;
+    color: #000;
+}
+
+.list li {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    border: 1px solid #eee;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 10px;
+}
+
+.list li h4 {
+    font-size: 18px;
+}
+
+.list li p>span {
+    color: #1a1919;
+}
+
+.list li .p1 {
+    color: rgb(57, 131, 241);
+    margin-top: 10px;
+}
+
+.list li .p2 {
+    color: #6d6d6d;
+    margin: 10px 0 20px;
+}

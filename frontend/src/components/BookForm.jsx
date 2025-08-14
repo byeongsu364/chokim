@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from 'react'
 import axios from 'axios'
-import './BookForm.css'
 const BookForm = () => {
 
     const API = import.meta.env.VITE_API_URL
@@ -86,11 +85,13 @@ const BookForm = () => {
             setLoading(false)
         }
     }
+    console.log('API =', import.meta.env.VITE_API_URL)
+
 
     return (
         <div className='book-wrap'>
             <h2><span>CHO&KIM</span> e-books</h2>
-            <div className="book-controls">
+            <div className="controls">
                 <input 
                 value={title}
                 onChange={(e)=>setTitle(e.target.value)}
@@ -112,7 +113,7 @@ const BookForm = () => {
                 rows={3}
                 />
 
-                <div className="book-buttons">
+                <div className="buttons">
                     <button className='btn enrol' onClick={onCreate} disabled={loading}>등록</button>
                     <button className='btn refresh'>새로고침</button>
                 </div>
@@ -120,7 +121,7 @@ const BookForm = () => {
 
             {loading && <p>불러오는중...</p>}
             {err && <p>{err}</p>}
-            <ul className='book-list'>
+            <ul className='list'>
             {books.map((book)=>(
                 <li key={book._id}>
                     <h4>
